@@ -12,22 +12,20 @@ Comment.init({
     },
     comment_text: {
         type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            len: [1]
-        }
+        allowNull: false
     },
     user_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'User',
+            model: 'user',
             key: 'id'
         }
     },
     post_id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
-            model: 'Post',
+            model: 'post',
             key: 'id'
         }
     }
@@ -35,7 +33,7 @@ Comment.init({
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Comment'
+    modelName: 'comment'
 });
 
 module.exports = Comment;

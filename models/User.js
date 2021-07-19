@@ -29,7 +29,7 @@ User.init({
         }
     }
 }, {
-    //hook to create a new assword for a new user
+    //hook to create a new password for a new user
     hooks: {
         async beforeCreatePW(newUserData) {
             newUserData.password = await bcrypt.hash(newUserData, 10)
@@ -44,7 +44,7 @@ User.init({
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'User'
+    modelName: 'user'
     }
 );
 
