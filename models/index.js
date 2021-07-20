@@ -22,7 +22,7 @@ User.hasMany(Comment, {
     foreignKey: 'user_id'
 });
 
-Post.hasMany(comment, {
+Post.hasMany(Comment, {
     foreignKey: 'post_id'
 })
 

@@ -31,11 +31,11 @@ User.init({
 }, {
     //hook to create a new password for a new user
     hooks: {
-        async beforeCreatePW(newUserData) {
+        async beforeCreate(newUserData) {
             newUserData.password = await bcrypt.hash(newUserData, 10)
             return newUserData;
         },
-        async beforeUpdatePW(updateUserData) {
+        async beforeUpdate(updateUserData) {
             updateUserData.password = await bcrypt.hash(updateUserData, 10)
             return updateUserData;
         }

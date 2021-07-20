@@ -1,8 +1,4 @@
 const router = require('express').Router();
-const {
-    response
-} = require('express');
-const { request } = require('http');
 const sequelize = require('../../config/connection');
 const {
     User,
