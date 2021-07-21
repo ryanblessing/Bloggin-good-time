@@ -5,7 +5,7 @@
 
  let sequelize;
 
-
+//gotten from 13.5.6- to connect the the jawsdb deployment
  if (process.env.JAWSDB_URL) {
    sequelize = new Sequelize(process.env.JAWSDB_URL);
  } else {

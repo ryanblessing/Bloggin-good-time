@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css">
     <title>Bloggin Good Time</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
     <header>
         <nav>
             <a href="/" class="nav-bar-items">Home</a>
+            <a href="../signup.handlebars" class="nav-bar-items">Sign up</a>
             {{#if loggedIn}}
             <a href="/dashboard" class="nav-bar-items">Dashboard</a>
             <a href="/" id="logout">Logout</a>
@@ -26,10 +27,11 @@
     <main>
         {{{ body }}}
     </main>
-
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
 </body>
 
 </html>
+
+
