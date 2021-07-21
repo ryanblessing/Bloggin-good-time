@@ -53,8 +53,8 @@ router.get('/:id', (request, response) => {
         })
 });
 
-// POST routes for login and logout 
-router.post('/', (request, response) => {
+// POST routes for login and logout and new user
+router.post('/signup', (request, response) => {
     User.create({
             username: request.body.username,
             email: request.body.email,
