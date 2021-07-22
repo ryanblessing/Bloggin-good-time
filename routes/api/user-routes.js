@@ -61,6 +61,7 @@ router.post('/signup', (request, response) => {
             password: request.body.password
         })
         .then(dbUserData => {
+            console.log('user data', dbUserData)
             request.session.save(() => {
                 request.session.user_id = dbUserData.id;
                 request.session.username = dbUserData.username;
@@ -70,7 +71,7 @@ router.post('/signup', (request, response) => {
             })
         })
         .catch(err => {
-            console.log(err);
+            console.log('Create error', err);
             response.status(500).json(err)
         })
 });

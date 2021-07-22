@@ -9,8 +9,8 @@ const newAccount = async (e) => {
         const password = document.querySelector('#passwordSignup').value.trim();
 
         if (username && password && email) {
-            const response = await fetch('/api/user-routes', {
-                method: 'Post',
+            const response = await fetch('/api/user/signup', {
+                method: 'POST',
                 body: JSON.stringify({
                     username,
                     email,
@@ -21,7 +21,7 @@ const newAccount = async (e) => {
                 }
             })
 
-            if (!response.ok) {
+            if (response.ok) {
                 document.location.replace('/dashboard');
             } else {
                 alert('SHIT AGAIN')

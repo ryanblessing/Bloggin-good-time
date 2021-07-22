@@ -6,6 +6,7 @@ const {
 } = require('../models');
 
 router.get('/', (request, response) => {
+    console.log('dashboard endpoint', request.session.user_id)
     Post.findAll({
             where: {
                 // use the ID from the session
@@ -32,6 +33,7 @@ router.get('/', (request, response) => {
             ]
         })
         .then(dbPostData => {
+            console.log('', dbPostData)
             // serialize data before passing to template
             const posts = dbPostData.map(post => post.get({
                 plain: true
@@ -42,7 +44,7 @@ router.get('/', (request, response) => {
             });
         })
         .catch(err => {
-            console.log('failed to get posts');
+            console.log('failed to get posts', err);
             response.status(500).json(err);
         });
 });

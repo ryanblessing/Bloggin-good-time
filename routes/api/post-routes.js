@@ -74,6 +74,7 @@ router.get('/:id', (request, response) => {
 
 //post routes 
 router.post('/', (request, response) => {
+    console.log('post request body!!!!',request.body)
     Post.create({
             title: request.body.title,
             content: request.body.content,

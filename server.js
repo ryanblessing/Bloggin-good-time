@@ -37,7 +37,7 @@ app.use(routes);
 
 //listening to addd to the front end
 sequelize.sync({
-    force: false
+    force: true
 }).then(() => {
     app.listen(PORT, () => console.log('Now Listening!!'));
 });

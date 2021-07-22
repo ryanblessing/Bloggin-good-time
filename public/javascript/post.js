@@ -4,13 +4,13 @@ const newPost = async (e) => {
         e.preventDefault();
 
         const post_title = document.querySelector('input[name="post-title"]').value;
-        const post_content = document.querySelector('input[name="post-content"]').value;
+        const post_content = document.querySelector('input[name="content"]').value;
 
         const response = await fetch('/api/post', {
             method: 'post',
             body: JSON.stringify({
-                post_title,
-                post_content
+                title: post_title,
+                content: post_content
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -59,9 +59,10 @@ const editPost = async (e) => {
 };
 
 //delete post
-const deletePost = async(e) => {
-    try { e.preventDefault();
-        
+const deletePost = async (e) => {
+    try {
+        e.preventDefault();
+
         const id = window.location.toString().split('/')[
             window.location.toString().split('/').length - 1
         ];
@@ -70,17 +71,17 @@ const deletePost = async(e) => {
             method: 'DELETE'
         });
 
-        if(response.ok){
+        if (response.ok) {
             document.location.replace('/dashboard/');
         } else {
             alert(response.statusText);
         }
-    } catch(error) {
+    } catch (error) {
         console.log(error)
     }
 }
 
 
 document.querySelector('.newPost').addEventListener('submit', newPost);
-document.querySelector('.editPost').addEventListener('submit', editPost);
-document.querySelector('.deletePost').addEventListener('click', deletePost);
+//document.querySelector('.editPost').addEventListener('submit', editPost);
+//document.querySelector('.deletePost').addEventListener('click', deletePost);
