@@ -60,6 +60,7 @@ router.post('/signup', (request, response) => {
             email: request.body.email,
             password: request.body.password
         })
+        console.log(User)
         .then(dbUserData => {
             console.log('user data', dbUserData)
             request.session.save(() => {
@@ -90,7 +91,7 @@ router.post('/login', (request, response) => {
             return;
         }
 
-        const passwordValidate = dbUserData.passwordCheck(request.body.password)
+        const passwordValidate = dbUserData.checkPassword(request.body.password)
 
         if (!passwordValidate) {
             response.status(400).json({

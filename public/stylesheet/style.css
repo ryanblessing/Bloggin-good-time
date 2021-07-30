@@ -19,7 +19,8 @@
     color: #333;
   }
 
-  .signupForm{
+  .login-form,
+  .signUpForm{
     color: #333;
     border: #333;
   } 
@@ -29,3 +30,4 @@
   background-color: azure;
   color: #333;
 }
+

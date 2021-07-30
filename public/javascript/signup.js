@@ -22,9 +22,9 @@ const newAccount = async (e) => {
             })
 
             if (response.ok) {
-                document.location.replace('/dashboard');
+                document.location.replace('/homepage');
             } else {
-                alert('SHIT AGAIN')
+                alert('still not working, check signup.js')
             }
 
         }
