@@ -9,7 +9,7 @@ const newAccount = async (e) => {
         const password = document.querySelector('#passwordSignup').value.trim();
 
         if (username && password && email) {
-            const response = await fetch('/api/user/signup', {
+            const response = await fetch('/api/user/login', {
                 method: 'POST',
                 body: JSON.stringify({
                     username,
@@ -34,4 +34,4 @@ const newAccount = async (e) => {
     }
 }
 
-document.querySelector('.signupForm').addEventListener('submit', newAccount);
+document.querySelector('.signUpForm').addEventListener('submit', newAccount);

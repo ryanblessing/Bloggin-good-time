@@ -60,7 +60,7 @@ router.post('/signup', (request, response) => {
             email: request.body.email,
             password: request.body.password
         })
-        console.log(User)
+        console.log(request)
         .then(dbUserData => {
             console.log('user data', dbUserData)
             request.session.save(() => {

@@ -44,7 +44,7 @@ router.get('/', (request, response) => {
         })
 });
 
-//sign up route
+// sign up route
 router.get('/signup', (request, response) => {
     if (request.session.signup) {
         response.redirect('/');
@@ -53,24 +53,24 @@ router.get('/signup', (request, response) => {
     response.render('signup')
 });
 
-// //sign up post route
-// router.post('/signup', (request, response) => {
-//     if (username && password && email) {
-//         user = User.FindOne({
-//             username: username
-//         })
-//         if (user == null) {
-//             var data = request.body
-//             User.Create(data).then(user => {
-//                 request.session.user = user
-//                 response.status(200)
-//                 return response.redirect('/dashboard')
-//             })
-//         } else {
-//             console.log('Shit!!!!')
-//         }
-//     }
-// })
+//sign up post route
+router.post('/signup', (request, response) => {
+    if (username && password && email) {
+        user = User.FindOne({
+            username: username
+        })
+        if (user == null) {
+            var data = request.body
+            User.Create(data).then(user => {
+                request.session.user = user
+                response.status(200)
+                return response.redirect('/homepage')
+            })
+        } else {
+            console.log('still not working homeRoutes.js')
+        }
+    }
+})
 
 
 
